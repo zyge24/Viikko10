@@ -20,7 +20,7 @@ public class User_list extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvUserList);
 
         recyclerView.setLayoutManager(new LinearLayoutManager((this)));
-        recyclerView.setAdapter(new );
+        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userStorage.getUsers()));
     }
 
 

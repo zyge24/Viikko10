@@ -19,8 +19,21 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
     this.users = users;
     }
 
-    public UserViewHolder onCreateviewHolder(ViewGroup parent, int viewType){
-        return new UserViewHolder(LayoutInflater.from(context).inflate(R.layout.user_view,parent,false));
+
+    @NonNull
+    @Override
+    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new UserViewHolder(LayoutInflater.from(context).inflate(R.layout.user_view, parent,false));
     }
-    public void onBindViewHolder()
+
+    public void onBindViewHolder(UserViewHolder holder, int position){
+        holder.name.setText(users.get(position).getFirstName()+" " +users.get(position).getLastName());
+        holder.email.setText(users.get(position).getEmail());
+        holder.subject.setText(users.get(position).getDegreeProgram());
+    }
+
+    @Override
+    public int getItemCount() {
+        return UserStorage.getInstance().getSize();
+    }
 }

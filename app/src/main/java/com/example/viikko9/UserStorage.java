@@ -13,6 +13,10 @@ public class UserStorage {
         return users;
     }
 
+    public int getSize(){
+        return users.size();
+    }
+
     public static void addUser(User user) {
         users.add(user);
     }

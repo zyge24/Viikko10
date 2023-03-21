@@ -5,6 +5,7 @@
     android:id="@+id/frameAddUser"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eeeee4"
     tools:context=".Add_user">
 
     <EditText
@@ -13,8 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Etunimi"
         android:inputType="textPersonName"
-        android:text="Etunimi"
+        android:selectAllOnFocus="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,8 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Sukunimi"
         android:inputType="textPersonName"
-        android:text="Sukunimi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFirstName" />
@@ -70,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="addUser"
         android:text="Lisää käyttäjä"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Sähköposti"
         android:inputType="textEmailAddress"
-        android:text="Sähköposti"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
