@@ -6,12 +6,15 @@ public class User extends UserStorage {
     private String email;
     private String degreeProgram;
 
-    public User (String firstName, String lastName, String email, String degreeProgram){
+    private int picture;
+
+    public User (String firstName, String lastName, String email, String degreeProgram, int picture){
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
+        this.picture = picture;
     }
     public String getFirstName() {
         return firstName;
@@ -19,6 +22,10 @@ public class User extends UserStorage {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public int getPicture() {
+        return picture;
     }
 
     public String getEmail() {
