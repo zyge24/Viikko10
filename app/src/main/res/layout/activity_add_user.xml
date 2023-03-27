@@ -25,7 +25,7 @@
         android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Sukunimi"
         android:inputType="textPersonName"
@@ -37,7 +37,7 @@
         android:id="@+id/rgSubject"
         android:layout_width="209dp"
         android:layout_height="192dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail">
@@ -71,18 +71,18 @@
         android:id="@+id/btnAddUserForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:onClick="addUser"
         android:text="Lisää käyttäjä"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sUserPicture" />
+        app:layout_constraintEnd_toEndOf="@+id/sUserPicture"
+        app:layout_constraintStart_toStartOf="@+id/sUserPicture"
+        app:layout_constraintTop_toBottomOf="@+id/cbSwimMaster" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Sähköposti"
         android:inputType="textEmailAddress"
@@ -94,9 +94,45 @@
         android:id="@+id/sUserPicture"
         android:layout_width="211dp"
         android:layout_height="36dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/rgSubject"
+        app:layout_constraintStart_toStartOf="@+id/rgSubject"
         app:layout_constraintTop_toBottomOf="@+id/rgSubject" />
+
+    <CheckBox
+        android:id="@+id/cbCandidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Kandidaatin tutkinto"
+        app:layout_constraintStart_toStartOf="@+id/sUserPicture"
+        app:layout_constraintTop_toBottomOf="@+id/sUserPicture" />
+
+    <CheckBox
+        android:id="@+id/cbDi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Diplomi-insinöörin tutkinto"
+        app:layout_constraintStart_toStartOf="@+id/cbCandidate"
+        app:layout_constraintTop_toBottomOf="@+id/cbCandidate" />
+
+    <CheckBox
+        android:id="@+id/cbDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tekniikan tohtorin tutkinto"
+        app:layout_constraintStart_toStartOf="@+id/cbDi"
+        app:layout_constraintTop_toBottomOf="@+id/cbDi" />
+
+    <CheckBox
+        android:id="@+id/cbSwimMaster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Uimamaisteri"
+        app:layout_constraintStart_toStartOf="@+id/cbDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/cbDoctor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

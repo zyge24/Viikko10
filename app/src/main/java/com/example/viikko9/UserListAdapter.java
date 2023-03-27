@@ -30,6 +30,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
         holder.name.setText(users.get(position).getFirstName()+" " +users.get(position).getLastName());
         holder.email.setText(users.get(position).getEmail());
         holder.subject.setText(users.get(position).getDegreeProgram());
+        holder.degrees.setText(degreesToString(position));
         holder.picture.setImageResource(users.get(position).getPicture());
     }
 
@@ -37,4 +38,14 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
     public int getItemCount() {
         return UserStorage.getInstance().getSize();
     }
+
+    public String degreesToString(int position){
+        ArrayList<String> degrees = users.get(position).getDegrees();
+        StringBuilder result = new StringBuilder("Suoritetut tutkinnot:\n");
+        for (String s: degrees){
+            result.append(s).append("\n");
+        }
+        return String.valueOf(result);
+    }
+    
 }
