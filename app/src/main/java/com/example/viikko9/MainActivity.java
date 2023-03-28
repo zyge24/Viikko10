@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //    UserStorage.getInstance().loadUsers(context);
+        context = getApplicationContext();
+        UserStorage.getInstance().loadUsers(context);
         UserStorage userStorage = UserStorage.getInstance();
 
     }
@@ -31,4 +32,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, User_list.class);
         startActivity(intent);
     }
+
+
 }

@@ -45,7 +45,6 @@ public class Add_user extends AppCompatActivity {
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-        context = MainActivity.getContext();
 
     }
 
@@ -82,32 +81,28 @@ public class Add_user extends AppCompatActivity {
                 userStorage.addUser(new User(Firstname.getText().toString(), Lastname.getText().toString(), Email.getText().toString(), "Sähkötekniikka", picture, degrees));
                 break;
         }
-        saveUsers();
+        UserStorage.getInstance().saveUsers(getApplicationContext());
     }
 
-    public ArrayList<String> getDegrees(){
+    public ArrayList<String> getDegrees() {
         ArrayList<String> result = new ArrayList<>();
         CheckBox candidate = findViewById(R.id.cbCandidate);
         CheckBox di = findViewById(R.id.cbDi);
         CheckBox doctor = findViewById(R.id.cbDoctor);
         CheckBox swimMaster = findViewById(R.id.cbSwimMaster);
-        if (candidate.isChecked()){
+        if (candidate.isChecked()) {
             result.add(String.valueOf(candidate.getText()));
         }
-        if (di.isChecked()){
+        if (di.isChecked()) {
             result.add(String.valueOf(di.getText()));
         }
-        if (doctor.isChecked()){
+        if (doctor.isChecked()) {
             result.add(String.valueOf(doctor.getText()));
         }
-        if (swimMaster.isChecked()){
+        if (swimMaster.isChecked()) {
             result.add(String.valueOf(swimMaster.getText()));
         }
         return result;
-    }
-
-    public void saveUsers(){
-        UserStorage.getInstance().saveUsers(context);
     }
 
 }

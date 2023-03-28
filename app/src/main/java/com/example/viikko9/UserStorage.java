@@ -20,7 +20,7 @@ public class UserStorage {
         return users;
     }
 
-    public int getSize(){
+    public int getSize() {
         return users.size();
     }
 
@@ -39,22 +39,20 @@ public class UserStorage {
 
     }
 
-    public void saveUsers(Context context){
-        try{
+
+
+    public void saveUsers(Context context) {
+        try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
             userWriter.writeObject(users);
             userWriter.close();
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Tiedostoa ei löytynyt, tiedostoston tallentaminen ei onnistunut");
-            throw new RuntimeException(e);
         } catch (IOException e) {
             System.out.println("Tiedostoston tallentaminen ei onnistunut");
             throw new RuntimeException(e);
         }
     }
 
-    public void loadUsers(Context context){
+    public void loadUsers(Context context) {
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("users.data"));
             users = (ArrayList<User>) userReader.readObject();

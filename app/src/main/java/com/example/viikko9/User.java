@@ -1,16 +1,17 @@
 package com.example.viikko9;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User extends UserStorage {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String degreeProgram;
+public class User extends UserStorage implements Serializable {
+    private final String firstName;
+    private final String lastName;
+    private final String email;
+    private final String degreeProgram;
+    protected static final long serialVersionUID = 3453475L;
+    private final ArrayList<String> degrees;
 
-    private ArrayList<String> degrees;
-
-    private int picture;
+    private final int picture;
 
     public User (String firstName, String lastName, String email, String degreeProgram, int picture, ArrayList<String> degrees){
         super();
