@@ -6,10 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class User_list extends AppCompatActivity {
 
     private UserStorage userStorage;
     private RecyclerView recyclerView;
+    private static ArrayList<User> users;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +23,20 @@ public class User_list extends AppCompatActivity {
 
         userStorage = UserStorage.getInstance();
 
+        users = userStorage.getUsers();
+
+        Comparator<User> lastNameComparator = new Comparator<User>() {
+            public int compare(User p1, User p2) {
+                return p1.getLastName().compareTo(p2.getLastName());
+            }
+        };
+
+        Collections.sort(users, lastNameComparator);
+
         recyclerView = findViewById(R.id.rvUserList);
 
         recyclerView.setLayoutManager(new LinearLayoutManager((this)));
-        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userStorage.getUsers()));
+        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), users));
     }
 
 

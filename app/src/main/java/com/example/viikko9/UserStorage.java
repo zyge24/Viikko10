@@ -40,7 +40,6 @@ public class UserStorage {
     }
 
 
-
     public void saveUsers(Context context) {
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
@@ -68,5 +67,7 @@ public class UserStorage {
             throw new RuntimeException(e);
         }
     }
+
+
 
 }
